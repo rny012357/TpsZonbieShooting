@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Attack",
+    "type": "attack",
+    "description": "攻撃力（固定値加算）",
+    "values": {"C": 5, "B": 10, "A": 20, "S": 40, "EX": 80}
+  },
+  {
+    "name": "Attack Mult",
+    "type": "attack_mult",
+    "description": "攻撃力（倍率加算）",
+    "values": {"C": 0.03, "B": 0.05, "A": 0.08, "S": 0.12, "EX": 0.20}
+  },
+  {
+    "name": "Crit Rate",
+    "type": "crit_rate",
+    "description": "クリティカル率加算",
+    "values": {"C": 0.02, "B": 0.04, "A": 0.06, "S": 0.10, "EX": 0.15}
+  },
+  {
+    "name": "Crit DMG",
+    "type": "crit_dmg",
+    "description": "クリティカルダメージ加算",
+    "values": {"C": 0.05, "B": 0.10, "A": 0.15, "S": 0.25, "EX": 0.40}
+  },
+  {
+    "name": "Reload",
+    "type": "reload_time",
+    "description": "リロード時間短縮（ミリ秒）",
+    "values": {"C": -100, "B": -200, "A": -300, "S": -500, "EX": -800}
+  },
+  {
+    "name": "Fire Speed",
+    "type": "fire_speed",
+    "description": "攻撃速度加算",
+    "values": {"C": 5, "B": 10, "A": 15, "S": 25, "EX": 40}
+  },
+  {
+    "name": "Magazine",
+    "type": "magazine",
+    "description": "最大装弾数加算",
+    "values": {"C": 2, "B": 3, "A": 5, "S": 8, "EX": 15}
+  },
+  {
+    "name": "HP Heal",
+    "type": "hp_heal",
+    "description": "HP回復",
+    "values": {"C": 5, "B": 10, "A": 20, "S": 35, "EX": 50}
+  }
+]

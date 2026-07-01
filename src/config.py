@@ -1,0 +1,144 @@
+"""
+ゲーム設定・定数定義
+全ての設定値を一元管理する。
+Areaシステム / サイバー空間風デザイン
+"""
+
+# === 画面設定 ===
+SCREEN_WIDTH = 1280
+SCREEN_HEIGHT = 720
+FPS = 60
+TITLE = "Zombie Shooting - Cyber Arena"
+
+# === 画面座標の基準点 ===
+CENTER_X = SCREEN_WIDTH // 2
+HORIZON_Y = 360
+GROUND_Y = SCREEN_HEIGHT - 80
+
+# === プレイヤー画面固定座標 ===
+PLAYER_SCREEN_X = 640
+PLAYER_SCREEN_Y = 600
+
+# === ワールド座標範囲（エリア境界） ===
+WORLD_X_MIN = -300
+WORLD_X_MAX = 300
+WORLD_Z_MIN = 0
+WORLD_Z_MAX = 100000  # 十分に広い
+
+# === 疑似3D描画パラメータ ===
+PERSPECTIVE_DEPTH = 400.0
+SCALE_FACTOR = 0.003
+MIN_SCALE = 0.08
+
+# === プレイヤー初期設定 ===
+PLAYER_HP = 100
+PLAYER_SPEED = 8
+PLAYER_FORWARD_SPEED = 6
+
+# === プレイヤー初期ステータス ===
+PLAYER_INIT_ATTACK = 100          # 攻撃力
+PLAYER_INIT_CRIT_RATE = 0.0       # クリティカル率 0%
+PLAYER_INIT_CRIT_DMG = 0.10       # クリティカルダメージ 10%
+PLAYER_INIT_RELOAD_TIME = 3000    # リロード時間 3秒（ミリ秒）
+PLAYER_INIT_FIRE_SPEED = 100      # 攻撃速度 100
+PLAYER_INIT_MAGAZINE = 10         # 最大装弾数
+
+# === 銃弾設定 ===
+BULLET_SPEED = 30
+BULLET_MAX_RANGE = 1100
+BASE_FIRE_INTERVAL = 150  # 基本連射間隔（ミリ秒）攻撃速度で変動
+
+# === ゾンビ設定 ===
+ZOMBIE_SPEED_MIN = 1.0
+ZOMBIE_SPEED_MAX = 3.0
+ZOMBIE_ATTACK_DISTANCE = 50
+ZOMBIE_BASE_ATTACK_DAMAGE = 10
+ZOMBIE_ATTACK_COOLDOWN = 1000
+ZOMBIE_ACTIVATION_RANGE = 400  # この距離以内でプレイヤーを検知し追跡開始
+
+# === Areaシステム設定 ===
+AREA_LENGTH = 1500            # 1エリアのz方向の長さ
+AREA_GATE_OFFSET = 50         # ゲートはエリア先頭からこの距離
+AREA_BASE_ZOMBIE_COUNT = 10   # Area1のゾンビ数
+AREA_ZOMBIE_INCREMENT = 5     # エリアごとの増加数
+AREA_ZOMBIE_HP_BASE = 1       # Area1のゾンビHP
+AREA_ZOMBIE_HP_INCREMENT = 1  # エリアごとのHP増加
+AREA_ZOMBIE_DMG_INCREMENT = 2 # エリアごとの攻撃力増加
+AREA_CLEAR_DISPLAY_TIME = 3000  # AREA CLEAR! 表示時間（ミリ秒）
+
+# === グリッド設定 ===
+GRID_SIZE = 100
+GRID_DRAW_RANGE = 1500
+GRID_DRAW_BEHIND = 300  # プレイヤー手前にもこの距離まで描画
+
+# === 当たり判定 ===
+HIT_X = 30
+HIT_Z = 30
+
+# === スコア設定 ===
+SCORE_ZOMBIE_KILL = 100
+SCORE_AREA_CLEAR = 1000
+SCORE_ZOMBIE_MISS = -200
+
+# === バフレアリティ ===
+RARITY_C = "C"
+RARITY_B = "B"
+RARITY_A = "A"
+RARITY_S = "S"
+RARITY_EX = "EX"
+
+RARITY_ORDER = [RARITY_C, RARITY_B, RARITY_A, RARITY_S, RARITY_EX]
+
+RARITY_COLORS = {
+    RARITY_C:  (0, 200, 80),    # 緑
+    RARITY_B:  (60, 120, 255),   # 青
+    RARITY_A:  (180, 60, 255),   # 紫
+    RARITY_S:  (255, 200, 50),   # 金
+    RARITY_EX: (255, 50, 50),    # 赤
+}
+
+# エリア番号に応じたレアリティ重み（キー: エリア範囲、値: 各レアリティの重み）
+# デフォルト（Area 1-3）
+RARITY_WEIGHTS_DEFAULT = {RARITY_C: 60, RARITY_B: 25, RARITY_A: 10, RARITY_S: 4, RARITY_EX: 1}
+# Area 4-6
+RARITY_WEIGHTS_MID = {RARITY_C: 30, RARITY_B: 40, RARITY_A: 20, RARITY_S: 8, RARITY_EX: 2}
+# Area 7-9
+RARITY_WEIGHTS_HIGH = {RARITY_C: 15, RARITY_B: 30, RARITY_A: 35, RARITY_S: 15, RARITY_EX: 5}
+# Area 10+
+RARITY_WEIGHTS_MAX = {RARITY_C: 10, RARITY_B: 20, RARITY_A: 35, RARITY_S: 25, RARITY_EX: 10}
+
+# === 色定義（サイバー空間風） ===
+COLOR_BLACK = (0, 0, 0)
+COLOR_WHITE = (255, 255, 255)
+COLOR_RED = (220, 50, 50)
+COLOR_GREEN = (50, 200, 50)
+COLOR_DARK_GREEN = (30, 120, 30)
+COLOR_YELLOW = (255, 220, 50)
+COLOR_GRAY = (100, 100, 100)
+COLOR_DARK_GRAY = (40, 40, 40)
+COLOR_GROUND = (0, 0, 0)
+COLOR_SKY = (0, 0, 0)
+COLOR_GRID = (0, 255, 0)
+COLOR_GRID_DIM = (0, 120, 0)
+COLOR_HORIZON = (0, 200, 80)
+COLOR_HP_BG = (20, 40, 20)
+COLOR_HP_BAR = (200, 40, 40)
+COLOR_HP_BAR_HIGH = (0, 255, 80)
+COLOR_ZOMBIE_BODY = (80, 160, 60)
+COLOR_ZOMBIE_HEAD = (100, 180, 70)
+COLOR_MUZZLE_FLASH = (255, 240, 150)
+COLOR_BLOOD = (180, 30, 30)
+COLOR_BULLET = (0, 255, 180)
+COLOR_PLAYER_BODY = (30, 40, 60)
+COLOR_PLAYER_GUN = (20, 30, 50)
+COLOR_GATE_BORDER = (0, 255, 180)  # ゲート枠色（ネオンシアン）
+COLOR_GATE_FILL = (0, 80, 60)      # ゲート内部色（暗いシアン）
+
+# === エフェクト設定 ===
+PARTICLE_LIFETIME = 500
+PARTICLE_COUNT_KILL = 15
+MUZZLE_FLASH_DURATION = 80
+SCREEN_SHAKE_DURATION = 200
+SCREEN_SHAKE_INTENSITY = 8
+DAMAGE_TEXT_LIFETIME = 800   # ダメージ数値表示時間（ミリ秒）
+BUFF_ORB_FLY_TIME = 600     # バフオーブの飛行時間（ミリ秒）
