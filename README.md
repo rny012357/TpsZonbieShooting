@@ -49,15 +49,15 @@ PythonとPygameを用いて制作した、疑似3DのTPSゾンビシューティ
 ```bash
 git clone https://github.com/rny012357/TPS-Zombie-Shooting.git
 cd TPS-Zombie-Shooting
-python -m venv .venv
-source .venv/bin/activate
+python -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
 ## 実行方法
 
 ```bash
-source .venv/bin/activate
+source venv/bin/activate
 python src/main.py
 ```
 
